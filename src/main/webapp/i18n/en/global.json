@@ -8,7 +8,14 @@
       "entities": {
         "main": "Entities",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-        "process": "Process"
+        "process": "Process",
+        "activity": "Activity",
+        "action": "Action",
+        "organization": "Organization",
+        "userX": "User X",
+        "organizationUser": "Organization User",
+        "errorLog": "Error Log",
+        "actionGeneric": "Action Generic"
       },
       "account": {
         "main": "Account",

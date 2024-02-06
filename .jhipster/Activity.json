@@ -1,0 +1,32 @@
+{
+  "annotations": {
+    "changelogDate": "20240206163532"
+  },
+  "applications": "*",
+  "entityTableName": "activity",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "ActivityTypeEnum",
+      "fieldValues": "GENERIC_NOTE,GENERIC_FILE,GENERIC_REMINDER,GENERIC_TASK,GENERIC_EVENT,GENERIC_EMAIL,GENERIC_CALL,GENERIC_MEETING,GENERIC_VISIT,GENERIC_PAYMENT,GENERIC_EXPENSE,GENERIC_INVOICE,GENERIC_RECEIPT"
+    }
+  ],
+  "name": "Activity",
+  "relationships": [
+    {
+      "otherEntityName": "action",
+      "otherEntityRelationshipName": "activity",
+      "relationshipName": "action",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "process",
+      "otherEntityRelationshipName": "activity",
+      "relationshipName": "process",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

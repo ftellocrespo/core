@@ -20,7 +20,8 @@
       },
       "id": "ID",
       "name": "Name",
-      "meta": "Meta"
+      "meta": "Meta",
+      "activity": "Activity"
     }
   }
 }

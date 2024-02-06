@@ -1,0 +1,30 @@
+{
+  "coreApp": {
+    "errorLog": {
+      "home": {
+        "title": "Error Logs",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Error Log",
+        "createOrEditLabel": "Crear o editar Error Log",
+        "search": "Buscar Error Log",
+        "notFound": "Ningún Error Logs encontrado"
+      },
+      "created": "Un nuevo Error Log ha sido creado con el identificador {{ param }}",
+      "updated": "Un Error Log ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Error Log ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Error Log {{ id }}?"
+      },
+      "detail": {
+        "title": "Error Log"
+      },
+      "id": "ID",
+      "className": "Class Name",
+      "line": "Line",
+      "error": "Error",
+      "erroyType": "Erroy Type",
+      "timestamp": "Timestamp",
+      "user": "User"
+    }
+  }
+}

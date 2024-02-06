@@ -1,9 +1,12 @@
 package ec.com.golem.domain;
 
+import static ec.com.golem.domain.ActivityTestSamples.*;
 import static ec.com.golem.domain.ProcessTestSamples.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import ec.com.golem.web.rest.TestUtil;
+import java.util.HashSet;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 class ProcessTest {
@@ -20,5 +23,27 @@ class ProcessTest {
 
         process2 = getProcessSample2();
         assertThat(process1).isNotEqualTo(process2);
+    }
+
+    @Test
+    void activityTest() throws Exception {
+        Process process = getProcessRandomSampleGenerator();
+        Activity activityBack = getActivityRandomSampleGenerator();
+
+        process.addActivity(activityBack);
+        assertThat(process.getActivities()).containsOnly(activityBack);
+        assertThat(activityBack.getProcess()).isEqualTo(process);
+
+        process.removeActivity(activityBack);
+        assertThat(process.getActivities()).doesNotContain(activityBack);
+        assertThat(activityBack.getProcess()).isNull();
+
+        process.activities(new HashSet<>(Set.of(activityBack)));
+        assertThat(process.getActivities()).containsOnly(activityBack);
+        assertThat(activityBack.getProcess()).isEqualTo(process);
+
+        process.setActivities(new HashSet<>());
+        assertThat(process.getActivities()).doesNotContain(activityBack);
+        assertThat(activityBack.getProcess()).isNull();
     }
 }

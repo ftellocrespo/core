@@ -1,0 +1,80 @@
+{
+  "annotations": {
+    "changelogDate": "20240206163832"
+  },
+  "applications": "*",
+  "documentation": "User entity.\\n@author fred.",
+  "entityTableName": "user_x",
+  "fields": [
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "facebookId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "googleId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "birth",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "AuthStateEnum",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,INACTIVE,PENDING,DELETED,BLOCKED"
+    }
+  ],
+  "name": "UserX",
+  "relationships": [
+    {
+      "otherEntityName": "organizationUser",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "organizationUser",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "errorLog",
+      "otherEntityRelationshipName": "user",
+      "relationshipName": "errorLog",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

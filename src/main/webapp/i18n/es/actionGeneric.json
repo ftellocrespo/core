@@ -1,0 +1,25 @@
+{
+  "coreApp": {
+    "actionGeneric": {
+      "home": {
+        "title": "Action Generics",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Action Generic",
+        "createOrEditLabel": "Crear o editar Action Generic",
+        "search": "Buscar Action Generic",
+        "notFound": "Ningún Action Generics encontrado"
+      },
+      "created": "Un nuevo Action Generic ha sido creado con el identificador {{ param }}",
+      "updated": "Un Action Generic ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Action Generic ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Action Generic {{ id }}?"
+      },
+      "detail": {
+        "title": "Action Generic"
+      },
+      "id": "ID",
+      "message": "Message"
+    }
+  }
+}

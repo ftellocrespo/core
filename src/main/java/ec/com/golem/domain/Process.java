@@ -1,7 +1,10 @@
 package ec.com.golem.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -29,6 +32,12 @@ public class Process implements Serializable {
     @Column(name = "meta")
     @org.springframework.data.elasticsearch.annotations.Field(type = org.springframework.data.elasticsearch.annotations.FieldType.Text)
     private String meta;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "process")
+    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @org.springframework.data.annotation.Transient
+    @JsonIgnoreProperties(value = { "actions", "process" }, allowSetters = true)
+    private Set<Activity> activities = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -69,6 +78,37 @@ public class Process implements Serializable {
 
     public void setMeta(String meta) {
         this.meta = meta;
+    }
+
+    public Set<Activity> getActivities() {
+        return this.activities;
+    }
+
+    public void setActivities(Set<Activity> activities) {
+        if (this.activities != null) {
+            this.activities.forEach(i -> i.setProcess(null));
+        }
+        if (activities != null) {
+            activities.forEach(i -> i.setProcess(this));
+        }
+        this.activities = activities;
+    }
+
+    public Process activities(Set<Activity> activities) {
+        this.setActivities(activities);
+        return this;
+    }
+
+    public Process addActivity(Activity activity) {
+        this.activities.add(activity);
+        activity.setProcess(this);
+        return this;
+    }
+
+    public Process removeActivity(Activity activity) {
+        this.activities.remove(activity);
+        activity.setProcess(null);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

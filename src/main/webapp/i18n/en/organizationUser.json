@@ -1,0 +1,31 @@
+{
+  "coreApp": {
+    "organizationUser": {
+      "home": {
+        "title": "Organization Users",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Organization User",
+        "createOrEditLabel": "Create or edit a Organization User",
+        "search": "Search for Organization User",
+        "notFound": "No Organization Users found"
+      },
+      "created": "A new Organization User is created with identifier {{ param }}",
+      "updated": "A Organization User is updated with identifier {{ param }}",
+      "deleted": "A Organization User is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Organization User {{ id }}?"
+      },
+      "detail": {
+        "title": "Organization User"
+      },
+      "id": "ID",
+      "state": "State",
+      "role": "Role",
+      "organization": "Organization",
+      "user": "User",
+      "help": {
+        "state": "The state attribute."
+      }
+    }
+  }
+}

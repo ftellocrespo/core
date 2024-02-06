@@ -15,5 +15,14 @@
     }
   ],
   "name": "Process",
-  "relationships": []
+  "relationships": [
+    {
+      "otherEntityName": "activity",
+      "otherEntityRelationshipName": "process",
+      "relationshipName": "activity",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
 }
