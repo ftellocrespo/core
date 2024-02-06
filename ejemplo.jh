@@ -4,3 +4,140 @@ entity Process {
     meta String
     
 }
+
+entity Activity {
+	type ActivityTypeEnum
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Action {
+	name String
+	
+}
+
+entity Organization {
+	identification String required
+    name String required
+    state AuthStateEnum required
+    country CountryEnum
+    address String 
+    phone String
+    email String
+    
+}
+
+/**
+ * User entity.
+ * @author fred.
+ */
+entity User {
+	email String required unique
+	password String required
+    facebookId String
+    googleId String
+    firstName String
+    lastName String
+    phone String
+    birth LocalDate
+    gender String
+    nationality String
+    address String
+    state AuthStateEnum required
+    
+    
+}
+
+/**
+ * The OrganizationUser entity.
+ */
+entity OrganizationUser {
+	/**
+	* The state attribute.
+	*/
+	state AuthStateEnum max(50)
+	role RoleEnum max(50)
+	
+}
+
+entity ErrorLog {
+	className String
+	line Long
+	error String
+    erroyType String
+    timestamp LocalDate
+  
+}
+
+entity ActionGeneric {
+	message String
+	
+}
+
+enum AuthStateEnum {
+    ACTIVE,
+    INACTIVE,
+    PENDING,
+    DELETED,
+    BLOCKED
+}
+enum RoleEnum {
+    ADMIN,
+    OR_ADMIN,
+    OR_LAWYER,
+    OR_ASISTANT,
+    OR_ACCOUNTANT,
+    OR_SCHEDULER
+}
+enum ActivityTypeEnum {
+    GENERIC_NOTE,
+    GENERIC_FILE,
+    GENERIC_REMINDER,
+    GENERIC_TASK,
+    GENERIC_EVENT,
+    GENERIC_EMAIL,
+    GENERIC_CALL,
+    GENERIC_MEETING,
+    GENERIC_VISIT,
+    GENERIC_PAYMENT,
+    GENERIC_EXPENSE,
+    GENERIC_INVOICE,
+    GENERIC_RECEIPT
+}
+enum CountryEnum{
+	ECUADOR
+}
+relationship OneToMany {
+	Process{process} to Activity
+}
+
+relationship OneToMany {
+	Activity{activity} to Action
+}
+
+relationship OneToMany {
+	Organization{organization} to OrganizationUser
+}
+
+relationship OneToMany {
+	User{user} to OrganizationUser
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	User{user} to ErrorLog
+	
+}
+
+// Set pagination options
+paginate User, Organization with infinite-scroll
+paginate Activity with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except ErrorLog
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
