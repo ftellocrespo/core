@@ -31,7 +31,7 @@ entity Organization {
  * User entity.
  * @author fred.
  */
-entity User {
+entity UserX {
 	email String required unique
 	password String required
     facebookId String
@@ -120,12 +120,12 @@ relationship OneToMany {
 }
 
 relationship OneToMany {
-	User{user} to OrganizationUser
+	UserX{user} to OrganizationUser
 }
 
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
-	User{user} to ErrorLog
+	UserX{user} to ErrorLog
 	
 }
 
