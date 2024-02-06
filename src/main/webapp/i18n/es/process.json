@@ -1,0 +1,26 @@
+{
+  "coreApp": {
+    "process": {
+      "home": {
+        "title": "Processes",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Process",
+        "createOrEditLabel": "Crear o editar Process",
+        "search": "Buscar Process",
+        "notFound": "Ningún Processes encontrado"
+      },
+      "created": "Un nuevo Process ha sido creado con el identificador {{ param }}",
+      "updated": "Un Process ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Process ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Process {{ id }}?"
+      },
+      "detail": {
+        "title": "Process"
+      },
+      "id": "ID",
+      "name": "Name",
+      "meta": "Meta"
+    }
+  }
+}

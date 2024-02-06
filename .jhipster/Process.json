@@ -1,0 +1,19 @@
+{
+  "annotations": {
+    "changelogDate": "20240206163532"
+  },
+  "applications": "*",
+  "entityTableName": "process",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "meta",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Process",
+  "relationships": []
+}

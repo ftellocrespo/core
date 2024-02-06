@@ -48,6 +48,7 @@ public class CacheConfiguration {
             createCache(cm, ec.com.golem.domain.User.class.getName());
             createCache(cm, ec.com.golem.domain.Authority.class.getName());
             createCache(cm, ec.com.golem.domain.User.class.getName() + ".authorities");
+            createCache(cm, ec.com.golem.domain.Process.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
