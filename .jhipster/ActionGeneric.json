@@ -1,0 +1,15 @@
+{
+  "annotations": {
+    "changelogDate": "20240206164132"
+  },
+  "applications": "*",
+  "entityTableName": "action_generic",
+  "fields": [
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ActionGeneric",
+  "relationships": []
+}

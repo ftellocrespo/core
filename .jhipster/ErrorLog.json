@@ -1,0 +1,31 @@
+{
+  "annotations": {
+    "changelogDate": "20240206164032"
+  },
+  "applications": "*",
+  "entityTableName": "error_log",
+  "fields": [
+    {
+      "fieldName": "className",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "line",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "error",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "erroyType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timestamp",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "name": "ErrorLog",
+  "relationships": []
+}

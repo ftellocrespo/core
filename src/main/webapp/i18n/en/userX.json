@@ -1,0 +1,36 @@
+{
+  "coreApp": {
+    "userX": {
+      "home": {
+        "title": "User XES",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new User X",
+        "createOrEditLabel": "Create or edit a User X",
+        "search": "Search for User X",
+        "notFound": "No User XES found"
+      },
+      "created": "A new User X is created with identifier {{ param }}",
+      "updated": "A User X is updated with identifier {{ param }}",
+      "deleted": "A User X is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete User X {{ id }}?"
+      },
+      "detail": {
+        "title": "User X"
+      },
+      "id": "ID",
+      "email": "Email",
+      "password": "Password",
+      "facebookId": "Facebook Id",
+      "googleId": "Google Id",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "phone": "Phone",
+      "birth": "Birth",
+      "gender": "Gender",
+      "nationality": "Nationality",
+      "address": "Address",
+      "state": "State"
+    }
+  }
+}

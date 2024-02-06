@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20240206163732"
+  },
+  "applications": "*",
+  "entityTableName": "organization",
+  "fields": [
+    {
+      "fieldName": "identification",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "AuthStateEnum",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "ACTIVE,INACTIVE,PENDING,DELETED,BLOCKED"
+    },
+    {
+      "fieldName": "country",
+      "fieldType": "CountryEnum",
+      "fieldValues": "ECUADOR"
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Organization",
+  "relationships": []
+}

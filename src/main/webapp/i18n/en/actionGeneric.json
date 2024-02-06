@@ -1,0 +1,25 @@
+{
+  "coreApp": {
+    "actionGeneric": {
+      "home": {
+        "title": "Action Generics",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Action Generic",
+        "createOrEditLabel": "Create or edit a Action Generic",
+        "search": "Search for Action Generic",
+        "notFound": "No Action Generics found"
+      },
+      "created": "A new Action Generic is created with identifier {{ param }}",
+      "updated": "A Action Generic is updated with identifier {{ param }}",
+      "deleted": "A Action Generic is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Action Generic {{ id }}?"
+      },
+      "detail": {
+        "title": "Action Generic"
+      },
+      "id": "ID",
+      "message": "Message"
+    }
+  }
+}
