@@ -1,0 +1,25 @@
+{
+  "annotations": {
+    "changelogDate": "20240206163632"
+  },
+  "applications": "*",
+  "documentation": "not an ignored comment",
+  "entityTableName": "action",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Action",
+  "relationships": [
+    {
+      "otherEntityName": "activity",
+      "otherEntityRelationshipName": "action",
+      "relationshipName": "activity",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

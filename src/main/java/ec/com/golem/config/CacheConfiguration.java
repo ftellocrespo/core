@@ -49,6 +49,18 @@ public class CacheConfiguration {
             createCache(cm, ec.com.golem.domain.Authority.class.getName());
             createCache(cm, ec.com.golem.domain.User.class.getName() + ".authorities");
             createCache(cm, ec.com.golem.domain.Process.class.getName());
+            createCache(cm, ec.com.golem.domain.Activity.class.getName());
+            createCache(cm, ec.com.golem.domain.Activity.class.getName() + ".actions");
+            createCache(cm, ec.com.golem.domain.Process.class.getName() + ".activities");
+            createCache(cm, ec.com.golem.domain.Action.class.getName());
+            createCache(cm, ec.com.golem.domain.Organization.class.getName());
+            createCache(cm, ec.com.golem.domain.Organization.class.getName() + ".organizationUsers");
+            createCache(cm, ec.com.golem.domain.UserX.class.getName());
+            createCache(cm, ec.com.golem.domain.UserX.class.getName() + ".organizationUsers");
+            createCache(cm, ec.com.golem.domain.UserX.class.getName() + ".errorLogs");
+            createCache(cm, ec.com.golem.domain.OrganizationUser.class.getName());
+            createCache(cm, ec.com.golem.domain.ErrorLog.class.getName());
+            createCache(cm, ec.com.golem.domain.ActionGeneric.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

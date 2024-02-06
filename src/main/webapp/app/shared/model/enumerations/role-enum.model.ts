@@ -1,0 +1,13 @@
+export enum RoleEnum {
+  ADMIN = 'ADMIN',
+
+  OR_ADMIN = 'OR_ADMIN',
+
+  OR_LAWYER = 'OR_LAWYER',
+
+  OR_ASISTANT = 'OR_ASISTANT',
+
+  OR_ACCOUNTANT = 'OR_ACCOUNTANT',
+
+  OR_SCHEDULER = 'OR_SCHEDULER',
+}

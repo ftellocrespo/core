@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20240206163932"
+  },
+  "applications": "*",
+  "documentation": "The OrganizationUser entity.",
+  "entityTableName": "organization_user",
+  "fields": [
+    {
+      "documentation": "The state attribute.",
+      "fieldName": "state",
+      "fieldType": "AuthStateEnum",
+      "fieldValues": "ACTIVE,INACTIVE,PENDING,DELETED,BLOCKED"
+    },
+    {
+      "fieldName": "role",
+      "fieldType": "RoleEnum",
+      "fieldValues": "ADMIN,OR_ADMIN,OR_LAWYER,OR_ASISTANT,OR_ACCOUNTANT,OR_SCHEDULER"
+    }
+  ],
+  "name": "OrganizationUser",
+  "relationships": [
+    {
+      "otherEntityName": "organization",
+      "otherEntityRelationshipName": "organizationUser",
+      "relationshipName": "organization",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "userX",
+      "otherEntityRelationshipName": "organizationUser",
+      "relationshipName": "user",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

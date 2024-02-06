@@ -1,0 +1,12 @@
+{
+  "coreApp": {
+    "AuthStateEnum": {
+      "null": "",
+      "ACTIVE": "ACTIVE",
+      "INACTIVE": "INACTIVE",
+      "PENDING": "PENDING",
+      "DELETED": "DELETED",
+      "BLOCKED": "BLOCKED"
+    }
+  }
+}

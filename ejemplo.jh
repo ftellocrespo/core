@@ -1,8 +1,7 @@
 
 entity Process {
 	name String
-    meta String
-    
+    meta String   
 }
 
 entity Activity {
@@ -13,7 +12,6 @@ entity Activity {
 /** not an ignored comment */
 entity Action {
 	name String
-	
 }
 
 entity Organization {
@@ -24,7 +22,6 @@ entity Organization {
     address String 
     phone String
     email String
-    
 }
 
 /**
@@ -32,7 +29,7 @@ entity Organization {
  * @author fred.
  */
 entity UserX {
-	email String required unique
+	email String required 
 	password String required
     facebookId String
     googleId String
@@ -44,8 +41,6 @@ entity UserX {
     nationality String
     address String
     state AuthStateEnum required
-    
-    
 }
 
 /**
@@ -55,9 +50,8 @@ entity OrganizationUser {
 	/**
 	* The state attribute.
 	*/
-	state AuthStateEnum max(50)
-	role RoleEnum max(50)
-	
+	state AuthStateEnum 
+	role RoleEnum 
 }
 
 entity ErrorLog {
@@ -66,72 +60,70 @@ entity ErrorLog {
 	error String
     erroyType String
     timestamp LocalDate
-  
 }
 
 entity ActionGeneric {
 	message String
-	
 }
 
 enum AuthStateEnum {
-    ACTIVE,
-    INACTIVE,
-    PENDING,
-    DELETED,
+    ACTIVE
+    INACTIVE
+    PENDING
+    DELETED
     BLOCKED
 }
 enum RoleEnum {
-    ADMIN,
-    OR_ADMIN,
-    OR_LAWYER,
-    OR_ASISTANT,
-    OR_ACCOUNTANT,
+    ADMIN
+    OR_ADMIN
+    OR_LAWYER
+    OR_ASISTANT
+    OR_ACCOUNTANT
     OR_SCHEDULER
 }
 enum ActivityTypeEnum {
-    GENERIC_NOTE,
-    GENERIC_FILE,
-    GENERIC_REMINDER,
-    GENERIC_TASK,
-    GENERIC_EVENT,
-    GENERIC_EMAIL,
-    GENERIC_CALL,
-    GENERIC_MEETING,
-    GENERIC_VISIT,
-    GENERIC_PAYMENT,
-    GENERIC_EXPENSE,
-    GENERIC_INVOICE,
+    GENERIC_NOTE
+    GENERIC_FILE
+    GENERIC_REMINDER
+    GENERIC_TASK
+    GENERIC_EVENT
+    GENERIC_EMAIL
+    GENERIC_CALL
+    GENERIC_MEETING
+    GENERIC_VISIT
+    GENERIC_PAYMENT
+    GENERIC_EXPENSE
+    GENERIC_INVOICE
     GENERIC_RECEIPT
 }
 enum CountryEnum{
 	ECUADOR
 }
 relationship OneToMany {
-	Process{process} to Activity
+	Process{activity} to Activity{process}
 }
 
 relationship OneToMany {
-	Activity{activity} to Action
+	Activity{action} to Action{activity}
 }
 
 relationship OneToMany {
-	Organization{organization} to OrganizationUser
+	Organization{organizationUser} to OrganizationUser{organization}
 }
 
 relationship OneToMany {
-	UserX{user} to OrganizationUser
+	UserX{organizationUser} to OrganizationUser{user}
 }
 
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
-	UserX{user} to ErrorLog
+	UserX to ErrorLog{user}
 	
 }
 
 // Set pagination options
-paginate User, Organization with infinite-scroll
-paginate Activity with pagination
+//paginate User, Organization with infinite-scroll
+//paginate Activity with pagination
 
 // Use Data Transfer Objects (DTO)
 // dto * with mapstruct

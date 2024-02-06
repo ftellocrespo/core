@@ -299,7 +299,7 @@ class ProcessResourceIT {
         Process partialUpdatedProcess = new Process();
         partialUpdatedProcess.setId(process.getId());
 
-        partialUpdatedProcess.meta(UPDATED_META);
+        partialUpdatedProcess.name(UPDATED_NAME).meta(UPDATED_META);
 
         restProcessMockMvc
             .perform(
@@ -313,7 +313,7 @@ class ProcessResourceIT {
         List<Process> processList = processRepository.findAll();
         assertThat(processList).hasSize(databaseSizeBeforeUpdate);
         Process testProcess = processList.get(processList.size() - 1);
-        assertThat(testProcess.getName()).isEqualTo(DEFAULT_NAME);
+        assertThat(testProcess.getName()).isEqualTo(UPDATED_NAME);
         assertThat(testProcess.getMeta()).isEqualTo(UPDATED_META);
     }
 
